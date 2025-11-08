@@ -1,0 +1,9 @@
+# Persistent project memory Codex should keep updated
+goals:
+  - Build a minimalist, professional personal site for Ellie Kim using Jekyll.
+decisions:
+  - Home hero text and bio live in Markdown/front matter for easy edits.
+open_questions: []
+next_actions:
+  - Install Bundler 2.6.2 and run `bundle exec jekyll serve`.
+  - Replace placeholder hero image and Vimeo links with final assets.
