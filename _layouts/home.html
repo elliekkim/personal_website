@@ -2,7 +2,7 @@
 layout: default
 ---
 <section class="hero">
-  <h1 class="hero-heading">{{ page.title | default: "Ellie Kim" }}</h1>
+  <h1 class="hero-heading">{{ page.hero_title | default: page.title | default: "Ellie Kim" }}</h1>
   <div class="hero-content">
     <div class="hero-image">
       <img
