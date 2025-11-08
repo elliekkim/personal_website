@@ -2,21 +2,17 @@
 layout: default
 ---
 <section class="hero">
-  <h1 class="hero-heading">Ellie Kim</h1>
+  <h1 class="hero-heading">{{ page.title | default: "Ellie Kim" }}</h1>
   <div class="hero-content">
     <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=800&q=80" alt="Placeholder portrait for Ellie Kim" loading="lazy" />
+      <img
+        src="{{ page.hero_image | default: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=800&q=80' }}"
+        alt="{{ page.hero_image_alt | default: 'Portrait of Ellie Kim' }}"
+        loading="lazy"
+      />
     </div>
     <div class="hero-blurb">
-      <p>
-        I am a filmmaker and researcher exploring the way visual narratives shape collective memory.
-        My work centers on intimate storytelling, thoughtful production design, and data-driven insights that support
-        artful, inclusive experiences. I enjoy building teams, mentoring emerging creatives, and translating complex ideas
-        into clear, compelling stories.
-      </p>
-      <p>
-        This site collects a curated look at my current projects, research collaborations, and filmography. Please reach out if you would like to collaborate.
-      </p>
+      {{ content | markdownify }}
     </div>
   </div>
 </section>
