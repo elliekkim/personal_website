@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% if page.title %}
+      <title>{{ page.title | escape }} · {{ site.title | default: "Ellie Kim" | escape }}</title>
+    {% else %}
+      <title>{{ site.title | default: "Ellie Kim" | escape }}</title>
+    {% endif %}
+    {% assign meta_description = page.description | default: site.description %}
+    {% if meta_description %}
+      <meta name="description" content="{{ meta_description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
+  </head>
+  <body>
+    <header class="global-nav">
+      <div class="nav-inner container">
+        <a class="brand" href="{{ '/' | relative_url }}">Ellie Kim</a>
+        <nav aria-label="Primary navigation">
+          <ul>
+            <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
+            <li><a href="{{ '/films/' | relative_url }}">Films</a></li>
+            <li><a href="{{ '/research-projects/' | relative_url }}">Research Projects</a></li>
+            <li><a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-content container">
+      {{ content }}
+    </main>
+    <footer class="site-footer container">
+      <p>&copy; {{ site.time | date: "%Y" }} Ellie Kim. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
